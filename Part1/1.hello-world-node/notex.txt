@@ -1,0 +1,23 @@
+there are to ways to write NodeJs code 
+1) REPL : read , eval , print , loop 
+
+$ node
+Welcome to Node.js v22.18.0.
+Type ".help" for more information.
+
+> console.log("repl")
+repl
+undefined
+
+> 2+2
+4
+
+> 100/0
+Infinity
+
+>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)  
+> .exit
+
+
+2) In a Js File

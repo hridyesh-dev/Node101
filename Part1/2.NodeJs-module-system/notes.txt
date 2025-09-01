@@ -1,0 +1,11 @@
+Node js module system allow us to organise our code into multiple reusable  pieces of code 
+we will make different files and then we can render them back into the root 
+Each file in node js will be treate as a seperate module 
+
+Our index.js is our root file
+
+//module.exports --> it is used to export functionality from a module 
+//require --> it is used to import functionality from other module
+
+
+NodeJs use common Js 

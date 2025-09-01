@@ -1,0 +1,11 @@
+package.json:
+It is used to manage our dependencies and dev dependencies of our project  and 
+it will contain the metadata of our project
+
+dependencies : all the packages that is required to run our projects into production
+dev dependencies : only packages that are needed for local development and testing 
+
+commands : 
+npm i nodemon 
+npm uninstall nodemon 
+npm update nodemon

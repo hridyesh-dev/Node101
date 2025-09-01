@@ -1,0 +1,52 @@
+======================================================
+THIS FOLDER CONTAINS THESE TOPICS :                  |
+======================================================
+Intro & demo
+
+Installing node js
+
+Running JavaScript files with Node JS
+
+Node module system
+
+Node package manager
+
+Path module
+
+File system
+
+HTTP Module
+
+Callbacks and callback hell
+
+Promises
+
+Async Await
+
+Event Emitter
+
+Express JS
+
+EJS Template engine
+
+Rest API development
+
+MongoDB and Mongoose basics
+
+Book store API Development
+
+Authentication and authorization
+
+File upload
+
+Change password, Delete image functionality, sorting and pagination
+
+Intermediate MongoDB concepts & aggregation
+
+Node JS with Socket
+
+Deployment strategies
+
+Node JS with GraphQL
+
+Node JS with typescript

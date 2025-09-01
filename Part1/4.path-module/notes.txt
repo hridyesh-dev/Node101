@@ -1,0 +1,37 @@
+it provides utilities to work with file and directory paths 
+
+
+✅ path.join()
+
+Just joins the path segments using the correct separator (/ or \).
+Does not resolve to an absolute path.
+Treats all segments as relative, even if one starts with /.
+
+path.join("users", "docs", "work", "imp");
+// Output: 'users/docs/work/imp' (on Unix) or 'users\\docs\\work\\imp' (on Windows)
+
+=====================================================================================
+
+✅ path.resolve()
+
+Builds an absolute path.
+Starts from the current working directory unless an absolute segment is encountered.
+If any segment is absolute, it resets the base to that segment.
+
+path.resolve("users", "docs", "work", "imp");
+// Output: 'C:\\your\\current\\dir\\users\\docs\\work\\imp' (on Windows) 
+
+========================================================================================
+
+path.normalize()
+
+/users/ → base directory
+.docs/ → a folder (could be hidden)
+../ → go up one level, so it cancels out .docs/
+work/imp → final path
+
+path.normalize() cleans up a path string by:
+
+Removing redundant slashes (/)
+Resolving . (current directory)
+Resolving .. (parent directory)
