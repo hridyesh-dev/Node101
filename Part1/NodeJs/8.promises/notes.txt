@@ -1,0 +1,1 @@
+Promises are a better way to handle asyncronous proramming as compaired to callbacks

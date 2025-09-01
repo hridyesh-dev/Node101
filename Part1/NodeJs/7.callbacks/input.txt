@@ -1,0 +1,4 @@
+callback logic concepts , it is used as arguments to another function
+it is used to handle any async operation 
+
+callback hell is also known as pyramid of doom 

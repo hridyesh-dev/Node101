@@ -1,0 +1,9 @@
+Interaction of users is handled through events 
+Mouse Clicks , Keyboard button Presses , mouse movements ...
+
+Event emitter class is a core module 
+this allows objects to emit named events and functions to listen to those events 
+
+.emit : used to trigger an event 
+
+.on : is used to add a callback function that going to be executed when the event is triggered 
