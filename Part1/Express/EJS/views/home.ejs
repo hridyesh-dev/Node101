@@ -1,0 +1,10 @@
+<%- include('components/header.ejs') %>
+<h1>WELCOME TO HOME PAGE</h1>
+<label>List Of Products</label>
+
+<ul>
+    <% products.forEach(product => { %>
+        <li><%= product.title %></li>
+    <% }) %>
+</ul>
+<%- include('components/footer.ejs') %>

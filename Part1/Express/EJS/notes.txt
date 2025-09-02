@@ -1,0 +1,9 @@
+EJS : Embedded JavaScript Templating 
+html which we are writing with plane JS 
+it can help us to generate dynamix html pages in express js 
+
+WE USE app.set() command to tell browser that we are using ejs as our 
+template engine 
+
+set the view engine as Ejs 
+app.set('view engine','ejs')

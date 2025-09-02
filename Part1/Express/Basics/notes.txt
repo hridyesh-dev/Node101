@@ -1,0 +1,21 @@
+A WEB FRAME WORK FOR NODE JS , just like we have react for js 
+Features : 
+small code , routing , middlewares , Template engines , static-file serving , error handling , creating restful api 
+
+=================================================================================================================================
+what is middlewares , function of middlewares  next function how it works , 
+
+middlewares are the function which have the access of the request and response object 
+and the next function middleware function , which will call the next middleware function in the stack 
+
+Application-level middlewares
+error handling middlewares 
+router level middleware
+built in middleware 
+custom middleware 
+
+there are lot of things that we can use on middlewares 
+middlewares are very versatile and very important 
+we can perform our own validations like auth functionality 
+and can create roles and on the bases of that we can restrict or allow users to access some pafes
+================================================================================================================
