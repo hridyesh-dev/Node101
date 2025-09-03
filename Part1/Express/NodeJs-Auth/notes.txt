@@ -1,0 +1,8 @@
+How to apply authentication in our node js application 
+there are 2 parts when we talking about authentication
+
+register--> login-->cookie-->cookie ki help se authentication--->Homepage ---> admin page(authorization)
+
+when a user registers store their password in an encrypted format with the help of bcrypt js 
+
+//if username is not unique we cant logic with the help of username 
