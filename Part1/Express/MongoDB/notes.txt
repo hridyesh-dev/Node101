@@ -1,0 +1,121 @@
+1. Connecting to MongoDB
+Use mongoose.connect(<connection_string>) to connect.
+Returns a Promise.
+Use .then() and .catch() to handle success and errors.
+    
+    mongoose.connect('your_connection_string')
+    .then(() => console.log("DB Connected successfully"))
+    .catch((e) => console.log(e.message));
+----------------------------------------------------------------------------------------------
+
+2. Schema Definition
+Define a schema using new mongoose.Schema({}).
+Specifies the structure of documents in a collection.
+
+    const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    age: Number,
+    isActive: Boolean,
+    tags: [String],
+    createdAt: { type: Date, default: Date.now }
+    });
+
+----------------------------------------------------------------------------------------------
+
+3. Model Creation
+Create a model using mongoose.model('CollectionName', schema).
+This is the interface to interact with the collection.
+
+    const User = mongoose.model('User', userSchema);
+
+----------------------------------------------------------------------------------------------
+
+4. Creating Documents
+Method 1: Using User.create()
+
+    const newUser = await User.create({
+        name: "Travis Doe",
+        email: "travis@gmail.com",
+        age: 35,
+        isActive: true,
+        tags: ["developer", "designer", "engineer"]
+    });
+
+Method 2: Using new User() and .save()
+    const newUser = new User({
+        name: "Raj",
+        email: "sharmaraj01@gmail.com",
+        age: 20,
+        isActive: true,
+        tags: ["developer", "designer", "engineer"]
+    });
+await newUser.save();
+
+----------------------------------------------------------------------------------------------
+
+5. Querying Documents
+
+a. Find All Users
+const allUsers = await User.find({});
+
+b. Find by Criteria
+const inactiveUsers = await User.find({ isActive: false });
+
+c. Find One
+const user = await User.findOne({ name: 'John Doe' });
+
+d. Find by ID
+const userById = await User.findById(newUser._id);
+
+e. Select Specific Fields
+const selectedFields = await User.find().select('name email -_id');
+
+f. LIKE IF we are applying pagination and we want to 
+    skip the first two items how we can do that
+        
+    const limitedUsers=await User.find().limit(5).skip(1)
+    
+g. Sorting :tell by what you want to sort it , age , descending , by default ascending
+    const sortedUsers=await User.find().sort({age: -1})
+
+h. Counting the number of Documents : to count the number of documents we can use the count 
+function of mondoDB
+   const ActiveUsers=await User.countDocuments({isActive:true})
+
+i.To delete a user 
+const deletedUser=await User.findByIdAndDelete(newUser._id)
+
+j.Update a User 
+    const updatedUser = await User.findByIdAndUpdate(
+    newUser._id, // 1️⃣ ID of the document to update
+    {
+        $set: { age: 100 },       // 2️⃣ Fields to update (overwrite)
+        $push: { tags: 'updated' } // 3️⃣ Modify array fields (push new value)
+    },
+    { new: true } // 4️⃣ Return the updated document instead of the old one
+    );
+🧩 Explanation of Parameters
+Document ID
+
+newUser._id: Unique identifier of the document you want to update.
+Update Object
+
+$set: Overwrites the value of a field.
+Example: age: 100 sets the age to 100.
+$push: Adds a new value to an array field.
+Example: Adds 'updated' to the tags array.
+Options
+
+{ new: true }: Ensures the returned value is the updated document, not the original.
+📌 Key Points to Remember
+findByIdAndUpdate() is a shortcut for finding a document by ID and updating it.
+MongoDB update operators like $set, $push, $inc, etc., are used inside the update object.
+Always use { new: true } if you want to work with the updated data immediately.
+This method is atomic and efficient for single-document updates.
+----------------------------------------------------------------------------------------------
+
+6. Closing the Connection
+Always close the connection after operations:
+await mongoose.connection.close();
+
